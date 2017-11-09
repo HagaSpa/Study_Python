@@ -1,8 +1,27 @@
 import sys
 import openpyxl as px
 
-# 引数を表示
-print(sys.argv) 
+"""
+引数で指定されたファイルに存在する、対象文字列を指定した色で塗るクラス。
 
-if (len(sys.argv) != 2):
-    print ('hello')
+excel_colored(fileName, color, target)
+"""
+
+# 引数をパースする
+def parser():
+    args = sys.argv
+    # 引数が不足している
+    if (len(args) != 4):
+        print ("引数が足りません")
+        return
+    # 引数として自動的に付与される、ファイル名自身を削除
+    args.pop(0)
+    # 引数を変数へ代入
+    file_name = args[0]
+    color = args[1]
+    target = args[2]
+
+
+# main処理
+if __name__ == '__main__':
+    parser()
