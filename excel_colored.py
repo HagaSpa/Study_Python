@@ -2,7 +2,7 @@ import sys
 import openpyxl as px
 
 """
-引数で指定されたファイルに存在する、対象文字列を指定した色で塗るクラス。
+引数で指定されたファイル（フルパス）に存在する、対象文字列を指定した色で塗るクラス。
 
 excel_colored(fileName, color, target)
 """
@@ -35,7 +35,11 @@ def colored():
     global file_name
     global color
     global target
-    print (file_name, color, target)
+    # Excekの読み込み
+    wb = px.load_workbook(file_name)
+    # シート名一覧を取得（カンマ区切りで取得できる）
+    sheetnames = wb.get_sheet_names()
+    print (sheetnames) 
 
 
 # main処理
