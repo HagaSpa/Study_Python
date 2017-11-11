@@ -10,9 +10,9 @@ excel_colored(fileName, color, target)
 # 引数をパースする
 def parser():
     args = sys.argv
-    # 引数が不足している
+    # 引数の数が誤っている
     if (len(args) != 4):
-        print ("引数が足りません")
+        print ("正しい数の引数を指定してください")
         return False
     # 引数として自動的に付与される、ファイル名自身を削除
     args.pop(0)
