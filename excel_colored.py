@@ -13,15 +13,17 @@ def parser():
     # 引数が不足している
     if (len(args) != 4):
         print ("引数が足りません")
-        return
+        return False
     # 引数として自動的に付与される、ファイル名自身を削除
     args.pop(0)
     # 引数を変数へ代入
     file_name = args[0]
     color = args[1]
     target = args[2]
-
+    return True
 
 # main処理
 if __name__ == '__main__':
-    parser()
+    parse_result = parser()
+    if (parse_result):
+        print ("ok")
