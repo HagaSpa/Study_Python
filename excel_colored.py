@@ -7,7 +7,7 @@ import openpyxl as px
 excel_colored(fileName, color, target)
 """
 
-#  グローバル変数定義
+# グローバル変数定義
 file_name = ""
 color = ""
 target = ""
@@ -23,17 +23,19 @@ def parser():
     args.pop(0)
     # 引数を変数へ代入
     global file_name
-    file_name = args[0]
     global color
-    color = args[1]
     global target
+    file_name = args[0]
+    color = args[1]
     target = args[2]
     return True
 
 # 色付けを実行する
 def colored():
     global file_name
-    print (file_name)
+    global color
+    global target
+    print (file_name, color, target)
 
 
 # main処理
