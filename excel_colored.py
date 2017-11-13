@@ -1,7 +1,6 @@
 import sys
 import openpyxl as px
 from openpyxl.styles import Font
-from openpyxl.styles.colors import RED
 
 """
 引数で指定されたファイル（フルパス）に存在する、対象文字列を指定した色で塗るクラス。
@@ -49,8 +48,8 @@ def colored():
             # 一行の中の一つのセルを取得
             for v in u:
                 if (v.value == target):
-                    # とりあえず赤色固定
-                    v.font = Font(color=RED)
+                    # 引数で指定された色（16進）で塗る
+                    v.font = Font(color=color)
     # ファイル保存
     wb.save(file_name)
 
