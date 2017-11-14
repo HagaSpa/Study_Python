@@ -47,9 +47,11 @@ def colored():
         for u in x:
             # 一行の中の一つのセルを取得
             for v in u:
-                if (v.value == target):
-                    # 引数で指定された色（16進）で塗る
-                    v.font = Font(color=color)
+                if v.value is not None:
+                    # セル内の文字列が該当文字列を含むなら
+                    if (target in v.value):
+                        # 引数で指定された色（16進）で塗る
+                        v.font = Font(color=color)
     # ファイル保存
     wb.save(file_name)
 
