@@ -32,6 +32,7 @@ class ExcelColored:
                         # セル内の文字列が該当文字列を含むなら
                         if (self.target in v.value):
                             # 引数で指定された色（16進）で塗る
+                            # TODO:部分一致した文字列のみを色塗りたい・・・
                             v.font = Font(color=self.color)
         # ファイル保存
         wb.save(self.file_name)
