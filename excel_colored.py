@@ -10,6 +10,7 @@ excel_colored(fileName, color, target)
 
 class ExcelColored:
     
+    # コンストラクタで引数を用いて定義
     def __init__(self, file_name, color, target):
         self.file_name = file_name
         self.color = color
